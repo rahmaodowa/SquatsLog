@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>SquatsJournal</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body-profile">
+  <div class="cont">
+
+<div class="pic">
+  <img src="https://i.pinimg.com/originals/14/7e/1c/147e1c28b7def14ba75776fa492e75b1.jpg" alt="">
+</div>
+
+  <div class="container2">
+
+
+  <% if (user.local.email) { %>
+    <h1>Welcome back <%= user.local.email %>!</h1>
+
+  <% } %>
+
+  <h3>Did you do your squats today?</h3>
+  <h2>Enter info here:</h2>
+
+  <form action="/squats" method="POST">
+    <input type="text" placeholder="Sets" name="sets">
+    <input type="text" placeholder="Rep" name="reps">
+    <input id="Date" type="date" name="date" required>
+    <button type="submit">Submit</button>
+  </form>
+
+
+
+  <h4>Your Squats Log</h4>
+
+    <% for(var i=0; i<squats.length; i++) {%>
+<p>
+      <span>Sets: </span>  <span class="topRow2"><%=squats[i].sets%></span>
+    <span> Reps: </span>  </span> <span class="topRow2"><%=squats[i].reps%></span>
+      <span> Date: </span>  <span class="topRow2"><%=squats[i].date%></span>
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+
+    <% } %>
+
+  </p>
+  <p><a href="/logout" class="btn btn-default btn-sm">Logout</a></p>
+
+
+</div>
+  </div>
+ <script type="text/javascript" src="main.js">
+
+ </script>
+</body>
+</html>
