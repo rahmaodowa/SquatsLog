@@ -1,5 +1,6 @@
 # SquatsLog
 
+![ screenshot of application](SquatsLog.png)
 
 
 How It's Made:
